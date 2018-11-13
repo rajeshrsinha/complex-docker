@@ -13,7 +13,7 @@ after_success:
   - docker build -t rsinha16/multi-nginx ./nginx
   - docker build -t rsinha16/multi-server ./server
   - docker build -t rsinha16/multi-worker ./worker
-  # Log in to the docker CLI
+  # Log in to the docker CLI added
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push rsinha16/multi-client
@@ -22,6 +22,7 @@ after_success:
   - docker push rsinha16/multi-worker
 
 # deploy:
+# 
 #   provider: elasticbeanstalk
 #   region: us-west-1
 #   app: multi-docker
